@@ -5,8 +5,10 @@
 
 :root {
     --main-color: #0065FC;
+    --main-color-half:#DEEBFF;
     --main-bg-color: #F2F2F2;
     --filter-bg-color: #DEEBFF;
+    --neutral-color:#D9D9D9;
 }
 
 .fa-solid {
@@ -17,20 +19,30 @@ body {
     display: flex;
     justify-content: center;
     margin: 0px;
-    padding: 0px;
-   
+    padding: 0px;  
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+p{
+    margin: 0px;
 }
 
-.bg_maquette{
-    position: fixed;  
-    top: 0;
-    left: 0;
-    width: 100%;         /* Full viewport width */
-    height: 100%;        /* Full viewport height */
-    opacity: 0;
-    z-index: -1;          /* Place behind other elements */
-    pointer-events: none;
-    margin-left: 12.5% ;
+
+.bg_maquette {
+    position: relative;
+    height: 0px;
+    overflow:visible;
+    width: 100%;            /* Full viewport width */
+    opacity: 0.5;
+    z-index: -1;             /* Place it behind other elements */
+    pointer-events: none;    /* Ignore mouse events */
+}
+.image-bg{
+    width: 100%;
+    height: auto;
 }
 
 .main-container {
@@ -82,11 +94,11 @@ img{
 header{
     display: flex;
     justify-content: space-between;
-    height:10%;
+    height:80px;
     width: 100%;
     align-items: center;
     margin-bottom: 2%;
-    margin-top: 0px;
+    margin-top: 0px
 }
 .logo{
     height: 25%;
@@ -96,7 +108,7 @@ header{
     display: flex;
     height: 100%;
     justify-content: space-evenly;
-    align-items: top;
+    align-items: start;
     gap: 70px; 
 }
 
@@ -123,7 +135,100 @@ opacity: 0;
 }
 
 
+/* Recherche */
+.recherche{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.headline-recherche{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
+.recherche-field{
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    flex-wrap: wrap;
+    width: fit-content;
+    height: 50px;
+    padding: 0;
+    gap: 0px;
+    overflow: hidden;
+    border-radius: 15px;;
+}
+.icon-recherche{
+    width: 50px;
+    background-color: var(--neutral-color);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-location-dot{
+    color:black;
+}
+
+.recherche-input{
+    height: 100%;
+    border-radius: 0px;
+    border: 0;
+}
+
+.submit-rechercher{
+    display: block;
+    height: 100%;
+    border-radius: 0px;
+    border: 0px;
+    background-color: var(--main-color);
+    color: var(--main-bg-color);
+}
+.submit-rechercher-mobile{
+    display: none;
+}
+
+/* filter */
+.button-filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 19px;
+    padding-right: 19px;
+    border: 2px solid;
+    /* height: 50px; */
+    border-radius: 25px;
+    border-color: #D9D9D9 ;
+    /* var(--filter-bg-color) */
+}
+.button-filter:hover{
+    background-color: var(--main-color-half);
+}
+
+.filter-search{
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    gap:10px;
+}
+.text-filter{
+ margin: 0px;   
+}
+/* .fa-money-bill-wave .fa-person .fa-heart .fa-fire{
+    font-size: fa-xl;
+} */
+
+.infobar{
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+    align-items: center;
+}
 
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
@@ -143,9 +248,50 @@ opacity: 0;
     width: 65%;
 }
 
+.hébergement_cards{
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.hébergement-cards .card{
+    display: flex;
+    flex-direction: column;
+    margin-top: 33px;
+}
+.hébergement-cards img {
+    width: 33%;
+    height: 136px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.hébergement-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.hébergement-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.hébergement_cards .card-subtitle {
+    margin: 0;
+}
+
+.hébergement_cards .card-rating {
+    margin-bottom: 5px;
+}
+
+
+
 /****** Populaires ***********/
 .populaires {
     width: 32%;
+
 }
 
 .populaires-title {
@@ -226,9 +372,21 @@ opacity: 0;
     .populaires-cards .card-subtitle {
         font-size: 13px;
     }
+    .submit-rechercher{
+        opacity: 1;
+    }
+    .submit-rechercher-mobile{
+        opacity: 0;
+    }
 }
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
     /* ... */
+    .submit-rechercher{
+        display: none;
+    }
+    .submit-rechercher-mobile{
+        display: block;
+    }
 }
