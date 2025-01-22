@@ -675,9 +675,9 @@ footer{
         flex: 1;
         flex-direction: column;
     }
-    .populaires-cards .card{
-        /* flex-direction: column; */
-    }
+    /* .populaires-cards .card{
+        flex-direction: column;
+    } */
     .populaires-cards img{
         height: 100%;
         max-height: 100%;
