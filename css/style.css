@@ -391,7 +391,7 @@ opacity: 0;
 .populaires-cards .card {
     display: flex;
     min-height: 100%;
-    flex: 1;
+    height: 146px;
     max-height: 100%;
 }
 
