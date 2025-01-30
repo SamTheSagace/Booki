@@ -603,7 +603,10 @@ footer{
         background-color: red;
         width: 0px;
         height: 0px;
+        font-size: 18px;
+        font-weight: 700;
     }
+
     .submit-rechercher a{
         display: none;
     }
